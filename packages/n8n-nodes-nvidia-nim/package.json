@@ -1,0 +1,57 @@
+{
+	"name": "n8n-nodes-nvidia-nim",
+	"version": "1.0.0",
+	"description": "n8n community node for NVIDIA NIM – GPU-accelerated inference for LLMs via NVIDIA NIM microservices.",
+	"license": "MIT",
+	"homepage": "https://github.com/Devn913/n8n/tree/master/packages/n8n-nodes-nvidia-nim",
+	"keywords": [
+		"n8n-community-node-package",
+		"nvidia",
+		"nim",
+		"llm",
+		"ai",
+		"gpu",
+		"inference"
+	],
+	"author": {
+		"name": "n8n community"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Devn913/n8n.git",
+		"directory": "packages/n8n-nodes-nvidia-nim"
+	},
+	"scripts": {
+		"build": "tsc --project tsconfig.json && cp -r nodes/**/*.svg dist/nodes/**/ 2>/dev/null || true",
+		"build:watch": "tsc --project tsconfig.json --watch",
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint nodes credentials --ext .ts",
+		"lint:fix": "eslint nodes credentials --ext .ts --fix",
+		"test": "jest"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"aiNodeSdkVersion": 1,
+		"credentials": [
+			"dist/credentials/NvidiaNimApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/NvidiaNim/NvidiaNim.node.js",
+			"dist/nodes/LmChatNvidiaNim/LmChatNvidiaNim.node.js"
+		]
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.0",
+		"@types/node": "^20.0.0",
+		"jest": "^29.5.0",
+		"ts-jest": "^29.1.0",
+		"typescript": "^5.0.0"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*",
+		"@n8n/ai-node-sdk": "*"
+	}
+}
