@@ -1,0 +1,22 @@
+{
+	"node": "n8n-nodes-nvidia-nim.lmChatNvidiaNim",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["AI"],
+	"subcategories": {
+		"AI": ["Language Models", "Root Nodes"],
+		"Language Models": ["Chat Models (Recommended)"]
+	},
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/Devn913/n8n/tree/master/packages/n8n-nodes-nvidia-nim#readme"
+			}
+		],
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.api.nvidia.com/nim/reference/"
+			}
+		]
+	}
+}

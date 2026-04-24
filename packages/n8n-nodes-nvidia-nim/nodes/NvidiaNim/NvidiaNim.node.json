@@ -1,0 +1,72 @@
+{
+	"node": "n8n-nodes-nvidia-nim.nvidiaNim",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["AI"],
+	"subcategories": {
+		"AI": ["Agents", "Miscellaneous", "Root Nodes"]
+	},
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/Devn913/n8n/tree/master/packages/n8n-nodes-nvidia-nim#readme"
+			}
+		],
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.api.nvidia.com/nim/reference/"
+			}
+		]
+	},
+	"provider": {
+		"name": "NVIDIA",
+		"displayName": "NVIDIA NIM",
+		"description": "GPU-accelerated inference for LLMs via NVIDIA NIM microservices.",
+		"apiType": "openai-compatible",
+		"baseUrl": "https://integrate.api.nvidia.com/v1",
+		"pricing": "Free tier available; paid via NVIDIA API credits",
+		"capabilities": ["chat", "streaming"],
+		"models": [
+			{
+				"id": "meta/llama-3.1-8b-instruct",
+				"name": "Meta Llama 3.1 8B Instruct",
+				"description": "Efficient open-source model from Meta, optimised for instruction following."
+			},
+			{
+				"id": "meta/llama-3.1-70b-instruct",
+				"name": "Meta Llama 3.1 70B Instruct",
+				"description": "Larger Llama 3.1 model for more complex reasoning tasks."
+			},
+			{
+				"id": "meta/llama3-8b-instruct",
+				"name": "Meta Llama 3 8B Instruct",
+				"description": "Llama 3 8B instruction-tuned model."
+			},
+			{
+				"id": "meta/llama3-70b-instruct",
+				"name": "Meta Llama 3 70B Instruct",
+				"description": "Llama 3 70B instruction-tuned model."
+			},
+			{
+				"id": "mistralai/mistral-nemo",
+				"name": "Mistral Nemo",
+				"description": "Mistral's compact and efficient model for text generation."
+			},
+			{
+				"id": "mistralai/mixtral-8x7b-instruct-v0.1",
+				"name": "Mixtral 8x7B Instruct",
+				"description": "Mixture-of-experts model from Mistral AI."
+			},
+			{
+				"id": "nvidia/llama-3.1-nemotron-70b-instruct",
+				"name": "NVIDIA Nemotron 70B Instruct",
+				"description": "NVIDIA's fine-tuned Llama 3.1 model optimised for helpfulness."
+			},
+			{
+				"id": "google/gemma-7b",
+				"name": "Google Gemma 7B",
+				"description": "Google's open-source model family."
+			}
+		]
+	}
+}
