@@ -260,7 +260,14 @@ export class NvidiaNim implements INodeType {
 					}
 
 					if (simplify) {
-						const text = responseData.choices?.[0]?.message?.content ?? '';
+						const text = responseData.choices?.[0]?.message?.content;
+						if (text === undefined) {
+							throw new NodeOperationError(
+								this.getNode(),
+								'No message content in API response. The response structure may be unexpected.',
+								{ itemIndex: i },
+							);
+						}
 						returnData.push({
 							json: { content: text },
 							pairedItem: { item: i },

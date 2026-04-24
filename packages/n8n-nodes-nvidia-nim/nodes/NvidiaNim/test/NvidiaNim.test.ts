@@ -151,8 +151,13 @@ describe('NvidiaNim node', () => {
 
 			await node.execute.call(mockContext as Parameters<typeof node.execute>[0]);
 
-			const body = (mockContext.helpers.httpRequest.mock.calls[0][0] as { body: Record<string, unknown> }).body;
-			expect(body.model).toBe('mistralai/mistral-nemo');
+			expect(mockContext.helpers.httpRequest).toHaveBeenCalledWith(
+				expect.objectContaining({
+					body: expect.objectContaining({
+						model: 'mistralai/mistral-nemo',
+					}),
+				}),
+			);
 		});
 
 		it('should return full response when simplify is false', async () => {
